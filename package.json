@@ -1,0 +1,19 @@
+{
+  "name": "slide-movie-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@marp-team/marp-cli": "^4.2.3",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "remotion": "^4.0.384"
+  }
+}
