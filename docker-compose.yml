@@ -1,6 +1,6 @@
 services:
   voicevox:
-    image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest
+    image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest@sha256:eaf829d9e1d7c85121cba6220292b42e1fbadc22b7552820f8b4fe5df5c819aa
     ports:
       - "50021:50021"
     restart: unless-stopped
