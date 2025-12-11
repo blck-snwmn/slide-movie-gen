@@ -12,9 +12,13 @@ export const RemotionRoot: React.FC = () => {
   const data = assets as Asset[];
   
   // 総フレーム数を計算
-  const durationInFrames = Math.ceil(
-    data.reduce((sum, asset) => sum + asset.duration, 0) * fps
-  );
+  const normalBuffer = 15;
+  const lastBuffer = 90;
+  
+  const totalDuration = data.reduce((sum, asset) => sum + asset.duration, 0);
+  const totalBuffer = (data.length - 1) * normalBuffer + lastBuffer;
+  
+  const durationInFrames = Math.ceil(totalDuration * fps + totalBuffer);
 
   return (
     <>

@@ -17,7 +17,10 @@ export const MyComposition = () => {
     <AbsoluteFill style={{ backgroundColor: 'white' }}>
       <Series>
         {data.map((asset, index) => {
-          const durationInFrames = Math.ceil(asset.duration * fps);
+          // 音声の長さに余韻を追加（最後だけ長くする）
+          const isLast = index === data.length - 1;
+          const bufferFrames = isLast ? 90 : 15; // 3秒 or 0.5秒
+          const durationInFrames = Math.ceil(asset.duration * fps) + bufferFrames;
           return (
             <Series.Sequence key={index} durationInFrames={durationInFrames}>
               <AbsoluteFill>

@@ -24,6 +24,8 @@
     "@remotion/cli": "^4.0.384",
     "@types/node": "^25.0.0",
     "@types/react": "^19.2.7",
+    "markdown-it": "^14.1.0",
+    "markdown-it-front-matter": "^0.2.4",
     "remotion": "^4.0.384",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"

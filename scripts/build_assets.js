@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const MarkdownIt = require('markdown-it');
+const markdownItFrontMatter = require('markdown-it-front-matter');
 
 // 設定
 const SLIDES_MD = path.join(__dirname, '../manuscript/slides.md');
@@ -22,45 +24,37 @@ function prepareDirs() {
 // Markdownから台詞を抽出
 function extractVoices(mdPath) {
   const content = fs.readFileSync(mdPath, 'utf-8');
-  // marpのページ区切り(---)で分割。先頭のfrontmatter(--- ... ---)を除くため工夫が必要
-  // 簡易的に、"---" でsplitして、marp: trueが含まれるブロック(frontmatter)はスキップする方針にする
   
-  const rawSlides = content.split(/\n---\n/);
-  const slides = rawSlides.filter(s => !s.includes('marp: true')); // Frontmatter除外（簡易実装）
+  const md = new MarkdownIt({ html: true });
+  // Frontmatterを読み飛ばすためにプラグインを使用
+  // cb引数は必須だが今回は使わないので空関数
+  md.use(markdownItFrontMatter, () => {});
   
-  // もしFrontmatterの直後に --- がなくて最初のスライドがFrontmatterと一緒に取れてしまう場合の対策
-  // 実際は marp-cli がどう解釈するかによるが、ここでは簡易的に「voiceコメント」を探す
+  const tokens = md.parse(content, {});
   
-  // 正規表現で <!-- voice: ... --> を探す
-  // ページごとの分割が難しい（---の扱いがMarkdown的に複雑）ため、
-  // Marpが出力する画像の枚数と、見つかったvoiceコメントの数が一致することを前提とするか、
-  // あるいは単純に「出現順」で割り当てる。
+  const voices = [];
+  let currentSlideVoice = null;
   
-  // より確実なのは、やはり --- で分割して各ブロックから探すこと。
-  // Frontmatterはファイルの先頭にある --- ブロック ---
-  // split('---') だと空文字やFrontmatterも配列に含まれる。
+  // 最初のスライド用
+  // トークンを順に見ていき、'hr' (---) が来たら次のスライドへ
   
-  const parts = content.split(/^---$/m); 
-  // parts[0] は空(先頭が---の場合)
-  // parts[1] はFrontmatter
-  // parts[2] 以降がスライド
-  
-  let slideBlocks = [];
-  if (parts.length > 2) {
-      slideBlocks = parts.slice(2);
-  } else {
-      // 区切りがない、あるいはFrontmatterのみ？
-      // 今回のケースでは必ずFrontmatterがあるので、slice(2)で本文以降を取得
-      slideBlocks = parts.slice(2);
+  for (const token of tokens) {
+    if (token.type === 'hr') {
+      // 区切り線が来たら、前のスライドのボイス（あれば）を確定させて、次のスライドへ
+      voices.push(currentSlideVoice);
+      currentSlideVoice = null;
+    } else if (token.type === 'html_block') {
+      // HTMLコメントを探す
+      const match = token.content.match(/<!--\s*voice:\s*(.*?)\s*-->/s);
+      if (match) {
+        // 同じスライドに複数voiceコメントがある場合は上書き（または結合）
+        // ここでは「1スライド1ボイス」前提で上書き
+        currentSlideVoice = match[1].trim();
+      }
+    }
   }
-
-  // もしスライド内に --- がない場合（1枚のみ）の考慮が必要だが、
-  // 今回のslides.mdは --- で区切られている。
-  
-  const voices = slideBlocks.map(block => {
-    const match = block.match(/<!--\s*voice:\s*(.*?)\s*-->/s);
-    return match ? match[1].trim() : null;
-  });
+  // 最後のスライドを追加
+  voices.push(currentSlideVoice);
   
   return voices;
 }
@@ -126,10 +120,7 @@ async function main() {
   // 注: extractVoicesの実装が簡易的なため、splitの挙動次第でズレる可能性がある。
   // 今回は一旦「見つかった順」で割り当てる。
   
-  const assets = [];
-  
-  for (let i = 0; i < slideFiles.length; i++) {
-    const slideFile = slideFiles[i];
+  const promises = slideFiles.map(async (slideFile, i) => {
     const text = voices[i] || null; // 対応する台詞がない場合はnull
     
     let voiceFile = null;
@@ -146,13 +137,15 @@ async function main() {
       }
     }
     
-    assets.push({
+    return {
       slide: `slides/${slideFile}`,
       voice: voiceFile,
       duration: duration,
       text: text
-    });
-  }
+    };
+  });
+
+  const assets = await Promise.all(promises);
   
   // 3. メタデータ出力
   fs.writeFileSync(ASSETS_JSON, JSON.stringify(assets, null, 2));
