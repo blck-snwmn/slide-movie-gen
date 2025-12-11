@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "check-types": "tsc --noEmit",
     "start": "remotion preview src/index.ts",
     "render": "remotion render src/index.ts MyComp out/video.mp4",
     "gen:slides": "marp manuscript/slides.md --images png -o public/slides/slide.png",
