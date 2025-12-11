@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "remotion preview src/index.ts",
-    "render": "remotion render src/index.ts MyComp out/video.mp4"
+    "render": "remotion render src/index.ts MyComp out/video.mp4",
+    "gen:slides": "marp slides.md --images png -o public/slides/slide.png"
   },
   "keywords": [],
   "author": "",

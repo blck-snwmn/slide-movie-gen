@@ -33,6 +33,7 @@ pnpm-debug.log*
 
 # Project specific
 public/*.wav
+public/slides/
 out/
 .cache
 .output
