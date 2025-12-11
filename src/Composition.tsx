@@ -1,4 +1,4 @@
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, Html5Audio, staticFile } from 'remotion';
 
 export const MyComposition = () => {
   return (
@@ -10,6 +10,7 @@ export const MyComposition = () => {
         backgroundColor: 'white',
       }}
     >
+      <Html5Audio src={staticFile('voice.wav')} />
       Hello, Zundamon!
     </AbsoluteFill>
   );

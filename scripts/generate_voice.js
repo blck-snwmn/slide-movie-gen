@@ -4,7 +4,7 @@ const path = require('path');
 // 設定
 const HOST = 'http://localhost:50021';
 const SPEAKER_ID = 3; // 3: ずんだもん (ノーマル)
-const OUTPUT_DIR = path.join(__dirname, '..', 'output');
+const OUTPUT_DIR = path.join(__dirname, '..', 'public');
 
 async function generateVoice(text) {
   if (!text) {
@@ -12,8 +12,8 @@ async function generateVoice(text) {
     process.exit(1);
   }
 
-  // 出力ファイル名を決定 (引数があればそれを使用、なければタイムスタンプ)
-  const filename = process.argv[3] || `voice_${Date.now()}.wav`;
+  // 出力ファイル名を決定 (引数があればそれを使用、なければ固定名)
+  const filename = process.argv[3] || 'voice.wav';
   const outputFile = path.join(OUTPUT_DIR, filename);
 
   try {
