@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "remotion preview src/index.ts",
+    "render": "remotion render src/index.ts MyComp out/video.mp4"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,14 @@
   "dependencies": {
     "@marp-team/marp-cli": "^4.2.3",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "remotion": "^4.0.384"
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.384",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "remotion": "^4.0.384",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
