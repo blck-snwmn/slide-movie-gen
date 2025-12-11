@@ -30,3 +30,8 @@ pnpm-debug.log*
 .vscode
 *.swp
 *.swo
+
+# Project specific
+output/
+.cache
+.output
