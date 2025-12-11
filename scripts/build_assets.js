@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // 設定
-const SLIDES_MD = path.join(__dirname, '../slides.md');
+const SLIDES_MD = path.join(__dirname, '../manuscript/slides.md');
 const PUBLIC_DIR = path.join(__dirname, '../public');
 const SLIDES_DIR = path.join(PUBLIC_DIR, 'slides');
 const VOICES_DIR = path.join(PUBLIC_DIR, 'voices');
