@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "remotion preview src/index.ts",
     "render": "remotion render src/index.ts MyComp out/video.mp4",
-    "gen:slides": "marp slides.md --images png -o public/slides/slide.png"
+    "gen:slides": "marp slides.md --images png -o public/slides/slide.png",
+    "build:assets": "node scripts/build_assets.js",
+    "build:movie": "pnpm build:assets && pnpm render"
   },
   "keywords": [],
   "author": "",

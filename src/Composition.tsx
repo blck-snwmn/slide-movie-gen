@@ -1,34 +1,40 @@
-import { AbsoluteFill, Html5Audio, Img, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Html5Audio, Img, Series, staticFile, useVideoConfig } from 'remotion';
+// @ts-ignore
+import assets from '../public/assets.json';
 
-const SLIDE_COUNT = 3;
-const SLIDE_DURATION_SEC = 3; // 1枚あたり3秒
+type Asset = {
+  slide: string;
+  voice: string | null;
+  duration: number;
+  text: string | null;
+};
 
 export const MyComposition = () => {
-  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-
-  // 現在のフレームがどのスライドに対応するか計算
-  // 3秒(3 * fpsフレーム)ごとに切り替える
-  const slideIndex = Math.floor(frame / (fps * SLIDE_DURATION_SEC));
-  
-  // スライド番号は 1 始まり (001, 002...)
-  // 最後のスライドを超えたら最後のスライドを表示し続ける
-  const currentSlideNumber = Math.min(slideIndex + 1, SLIDE_COUNT);
-  
-  // 3桁のゼロ埋め (001, 002...)
-  const slideName = `slide.${String(currentSlideNumber).padStart(3, '0')}.png`;
+  const data = assets as Asset[];
 
   return (
     <AbsoluteFill style={{ backgroundColor: 'white' }}>
-      <Html5Audio src={staticFile('voice.wav')} />
-      <Img 
-        src={staticFile(`slides/${slideName}`)} 
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'contain',
-        }}
-      />
+      <Series>
+        {data.map((asset, index) => {
+          const durationInFrames = Math.ceil(asset.duration * fps);
+          return (
+            <Series.Sequence key={index} durationInFrames={durationInFrames}>
+              <AbsoluteFill>
+                <Img
+                  src={staticFile(asset.slide)}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                  }}
+                />
+                {asset.voice && <Html5Audio src={staticFile(asset.voice)} />}
+              </AbsoluteFill>
+            </Series.Sequence>
+          );
+        })}
+      </Series>
     </AbsoluteFill>
   );
 };

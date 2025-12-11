@@ -32,8 +32,9 @@ pnpm-debug.log*
 *.swo
 
 # Project specific
-public/*.wav
+public/**/*.wav
 public/slides/
+public/assets.json
 out/
 .cache
 .output
