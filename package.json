@@ -22,7 +22,7 @@
     "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@remotion/cli": "4.0.384",
+    "@remotion/cli": "4.0.393",
     "@types/node": "25.0.0",
     "@types/react": "^19.2.7",
     "markdown-it": "14.1.0",
