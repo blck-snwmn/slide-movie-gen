@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@remotion/cli": "4.0.406",
-    "@types/node": "25.0.3",
+    "@types/node": "25.0.9",
     "@types/react": "19.2.7",
     "markdown-it": "14.1.0",
     "markdown-it-front-matter": "0.2.4",
