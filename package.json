@@ -25,7 +25,7 @@
     "@remotion/cli": "4.0.414",
     "@types/node": "25.0.10",
     "@types/react": "19.2.7",
-    "markdown-it": "14.1.0",
+    "markdown-it": "14.1.1",
     "markdown-it-front-matter": "0.2.4",
     "remotion": "4.0.414",
     "tsx": "4.21.0",
