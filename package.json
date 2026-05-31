@@ -28,7 +28,7 @@
     "markdown-it": "14.1.1",
     "markdown-it-front-matter": "0.2.4",
     "remotion": "4.0.468",
-    "tsx": "4.21.0",
+    "tsx": "4.21.1",
     "typescript": "5.9.3"
   }
 }
