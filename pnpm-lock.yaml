@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@marp-team/marp-cli':
         specifier: ^4.2.3
-        version: 4.4.0(typescript@5.9.3)
+        version: 4.4.0(typescript@6.0.3)
       react:
         specifier: ^19.2.1
         version: 19.2.7
@@ -40,8 +40,8 @@ importers:
         specifier: 4.22.4
         version: 4.22.4
       typescript:
-        specifier: 5.9.3
-        version: 5.9.3
+        specifier: 6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -1505,8 +1505,8 @@ packages:
   typed-query-selector@2.12.2:
     resolution: {integrity: sha512-EOPFbyIub4ngnEdqi2yOcNeDLaX/0jcE1JoAXQDDMIthap7FoN795lc/SHfIq2d416VufXpM8z/lD+WRm2gfOQ==}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1774,12 +1774,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@marp-team/marp-cli@4.4.0(typescript@5.9.3)':
+  '@marp-team/marp-cli@4.4.0(typescript@6.0.3)':
     dependencies:
       '@marp-team/marp-core': 4.3.0
       '@marp-team/marpit': 3.2.1
       chokidar: 4.0.3
-      cosmiconfig: 9.0.1(typescript@5.9.3)
+      cosmiconfig: 9.0.1(typescript@6.0.3)
       puppeteer-core: 24.43.1
       serve-index: 1.9.2
       tmp: 0.2.7
@@ -2376,14 +2376,14 @@ snapshots:
 
   commander@8.3.0: {}
 
-  cosmiconfig@9.0.1(typescript@5.9.3):
+  cosmiconfig@9.0.1(typescript@6.0.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.2.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -3115,7 +3115,7 @@ snapshots:
 
   typed-query-selector@2.12.2: {}
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
   uc.micro@2.1.0: {}
 
