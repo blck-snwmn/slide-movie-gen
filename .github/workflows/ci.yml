@@ -25,7 +25,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --allow-build=esbuild
+        run: pnpm --dangerously-allow-all-builds install --frozen-lockfile
 
       - name: Check types
         run: pnpm check-types
