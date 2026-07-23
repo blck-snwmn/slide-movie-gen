@@ -10,6 +10,7 @@
     "render": "remotion render src/index.ts MyComp out/video.mp4",
     "gen:slides": "marp manuscript/slides.md --images png -o public/slides/slide.png",
     "build:assets": "bun scripts/build_assets.js",
+    "check:remotion": "bun run build:assets --skip-voice && remotion compositions src/index.ts",
     "build:movie": "bun run build:assets && bun run render"
   },
   "keywords": [],

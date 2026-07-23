@@ -12,6 +12,7 @@ const VOICES_DIR = path.join(PUBLIC_DIR, 'voices');
 const ASSETS_JSON = path.join(PUBLIC_DIR, 'assets.json');
 const VOICEVOX_HOST = 'http://localhost:50021';
 const SPEAKER_ID = 3; // ずんだもん
+const SKIP_VOICE = process.argv.includes('--skip-voice');
 
 // ディレクトリの準備
 function prepareDirs() {
@@ -126,7 +127,7 @@ async function main() {
     let voiceFile = null;
     let duration = 3; // デフォルト3秒
     
-    if (text) {
+    if (text && !SKIP_VOICE) {
       const voiceFilename = `voice.${String(i + 1).padStart(3, '0')}.wav`;
       const voicePath = path.join(VOICES_DIR, voiceFilename);
       await generateVoice(text, voicePath);

@@ -26,5 +26,5 @@ jobs:
       - name: Check types
         run: bun run check-types
 
-      - name: Verify slide generation
-        run: bun run gen:slides
+      - name: Verify slide generation and Remotion composition
+        run: bun run check:remotion
