@@ -257,7 +257,7 @@ export const MyVideo = () => {
 
 このツールも **Gemini** が実装しました。
 
-- Node.jsスクリプト
+- Bunスクリプト
 - Remotionの実装
 - 環境構築
 - デバッグ

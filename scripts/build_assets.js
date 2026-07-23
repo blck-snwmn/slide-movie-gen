@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 const MarkdownIt = require('markdown-it');
 const markdownItFrontMatter = require('markdown-it-front-matter');
 
@@ -107,7 +107,7 @@ async function main() {
   // 1. Marpで画像生成
   console.log('Generating slides...');
   // slide.001.png という形式で出力される
-  execSync(`npx marp "${SLIDES_MD}" --images png -o "${path.join(SLIDES_DIR, 'slide.png')}"`);
+  execFileSync('bun', ['x', 'marp', SLIDES_MD, '--images', 'png', '-o', path.join(SLIDES_DIR, 'slide.png')]);
   
   // 生成された画像リストを取得
   const slideFiles = fs.readdirSync(SLIDES_DIR).filter(f => f.endsWith('.png')).sort();
@@ -153,4 +153,4 @@ async function main() {
   console.log('--- Done ---');
 }
 
-main();
+await main();

@@ -11,7 +11,7 @@ The core workflow involves:
 ## Architecture & Key Components
 
 ### 1. Asset Preparation (`scripts/build_assets.js`)
-This Node.js script is responsible for pre-processing the input content.
+This Bun script is responsible for pre-processing the input content.
 *   **Input:** `manuscript/slides.md`
 *   **Processing:**
     *   Uses `@marp-team/marp-cli` to convert slides into PNG images (`public/slides/`).
@@ -34,13 +34,13 @@ This is a **Remotion** component written in React.
 ## Development Workflow
 
 ### Prerequisites
-*   Node.js & pnpm
+*   Bun
 *   Docker (for VOICEVOX)
 
 ### Setup
 1.  Install dependencies:
     ```bash
-    pnpm install
+    bun install
     ```
 2.  Start the VOICEVOX engine:
     ```bash
@@ -59,19 +59,19 @@ This is a **Remotion** component written in React.
 ### Building & Running
 *   **Preview Video:**
     ```bash
-    pnpm start
+    bun run start
     ```
-    This opens the Remotion previewer. Note that you may need to run `pnpm build:assets` first if `assets.json` is missing or outdated.
+    This opens the Remotion previewer. Note that you may need to run `bun run build:assets` first if `assets.json` is missing or outdated.
 
 *   **Generate Full Video:**
     ```bash
-    pnpm build:movie
+    bun run build:movie
     ```
     This runs the asset build script and then renders the final MP4 to `out/video.mp4`.
 
 *   **Regenerate Assets Only:**
     ```bash
-    pnpm build:assets
+    bun run build:assets
     ```
     Useful if you only changed the text/slides and want to update the preview without rendering the full video.
 
