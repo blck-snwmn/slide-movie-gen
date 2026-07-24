@@ -6,7 +6,7 @@ Automatically generate slide presentation videos from a Markdown file.
 
 1. Install dependencies
    ```bash
-   pnpm install
+   bun install
    ```
 2. Start VOICEVOX ENGINE
    ```bash
@@ -34,7 +34,7 @@ Automatically generate slide presentation videos from a Markdown file.
 
 2. Generate the video.
    ```bash
-   pnpm build:movie
+   bun run build:movie
    ```
 
 3. The video will be output to `out/video.mp4`.

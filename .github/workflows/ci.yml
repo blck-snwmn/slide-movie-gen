@@ -15,20 +15,16 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
-
-      - name: Use Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - name: Install Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
-          node-version-file: package.json
-          cache: 'pnpm'
+          bun-version-file: package.json
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Check types
-        run: pnpm check-types
+        run: bun run check-types
 
-      - name: Verify slide generation
-        run: pnpm gen:slides
+      - name: Verify slide generation and Remotion composition
+        run: bun run check:remotion

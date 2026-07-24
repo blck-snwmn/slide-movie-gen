@@ -8,7 +8,7 @@ const OUTPUT_DIR = path.join(__dirname, '..', 'public');
 
 async function generateVoice(text) {
   if (!text) {
-    console.error('使用法: node scripts/generate_voice.js "喋らせたい内容" [ファイル名.wav]');
+    console.error('使用法: bun scripts/generate_voice.js "喋らせたい内容" [ファイル名.wav]');
     process.exit(1);
   }
 
@@ -61,4 +61,4 @@ async function generateVoice(text) {
 
 // コマンドライン引数からテキストを取得
 const text = process.argv[2] || 'こんにちは、ずんだもんです。';
-generateVoice(text);
+await generateVoice(text);
