@@ -15,7 +15,7 @@
         "@types/react": "19.2.18",
         "markdown-it": "15.0.0",
         "markdown-it-front-matter": "0.2.4",
-        "remotion": "4.0.503",
+        "remotion": "4.0.504",
         "typescript": "6.0.3",
       },
     },
@@ -699,7 +699,7 @@
 
     "recast": ["recast@0.23.11", "", { "dependencies": { "ast-types": "0.16.1", "esprima": "4.0.1", "source-map": "0.6.1", "tiny-invariant": "1.3.3", "tslib": "2.8.1" } }, "sha512-YTUo+Flmw4ZXiWfQKGcwwc11KnoRAYgzAE2E7mXKCjSviTKShtxBsN6YUUBB2gtaBzKzeKunxhUwNHQuRryhWA=="],
 
-    "remotion": ["remotion@4.0.503", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-j/oYKlTe9gvYLQVsBeVhG6y4aIi9brL4AV4v/101A9e/QW4ESjpbnqdwdKUc0VWcU/bNlqsvbsfUBgnP/XnHdw=="],
+    "remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
 
     "require-directory": ["require-directory@2.1.1", "", {}, "sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q=="],
 
@@ -863,29 +863,7 @@
 
     "@puppeteer/browsers/semver": ["semver@7.8.5", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA=="],
 
-    "@remotion/bundler/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/cli/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/media-utils/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/player/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/renderer/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
     "@remotion/renderer/ws": ["ws@8.21.0", "", {}, "sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g=="],
-
-    "@remotion/studio/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/studio-codemods/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/studio-server/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/studio-shared/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/web-renderer/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
-
-    "@remotion/zod-types/remotion": ["remotion@4.0.504", "", { "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-lSG2VUZ2lXZdXNBCOX7yQUhnnbhVw5MP9XJX8HViTD/4KYBQZUKY0V76MQmcqzwE03q20ky/e5POh+snph7GHQ=="],
 
     "@svgr/core/cosmiconfig": ["cosmiconfig@8.3.6", "", { "dependencies": { "import-fresh": "^3.3.0", "js-yaml": "^4.1.0", "parse-json": "^5.2.0", "path-type": "^4.0.0" }, "peerDependencies": { "typescript": ">=4.9.5" }, "optionalPeers": ["typescript"] }, "sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA=="],
 
