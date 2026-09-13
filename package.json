@@ -19,13 +19,13 @@
   "packageManager": "bun@1.4.2",
   "dependencies": {
     "@marp-team/marp-cli": "4.5.1",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@remotion/cli": "4.0.523",
     "@types/node": "26.5.1",
-    "@types/react": "19.2.18",
+    "@types/react": "19.3.0",
     "markdown-it": "15.0.1",
     "markdown-it-front-matter": "0.2.4",
     "remotion": "4.0.523",
