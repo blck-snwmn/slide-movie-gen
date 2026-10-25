@@ -16,7 +16,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "bun@1.4.3",
+  "packageManager": "bun@1.4.4",
   "dependencies": {
     "@marp-team/marp-cli": "4.5.1",
     "react": "19.3.1",
