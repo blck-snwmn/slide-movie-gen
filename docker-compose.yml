@@ -1,5 +1,5 @@
 services:
   voicevox:
-    image: voicevox/voicevox_engine:cpu-0.25.1@sha256:0434decfca36449b6ade271b5d970e880a875f0806b86acb31830624d2830412
+    image: voicevox/voicevox_engine:0.25.1@sha256:0434decfca36449b6ade271b5d970e880a875f0806b86acb31830624d2830412
     ports:
       - "127.0.0.1:50021:50021"
